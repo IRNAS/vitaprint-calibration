@@ -1,4 +1,4 @@
-# Latency Determination
+# PART 1 - Latency Determination
 
 ## Introduction
 
@@ -49,9 +49,12 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 - extrude some material so that it starts flowing out and wait for the outflow to stop
 
 <b> 4. Start recording the mass </b>
+
 <b> 5. Run the g-code in your CNC controller </b>
 
+
 <img src="https://user-images.githubusercontent.com/14543226/28709225-bcf81004-737f-11e7-87f6-de00855973e0.png" alt="table" width="600" height="400">
+
 Figure 2: The apparatus for latency measurement
 
 ## Data Processing <a id="DATA_PROCESSING"></a>
@@ -60,7 +63,7 @@ It is important to understand the workflow of the data processing. The raw data 
 
 <img src="https://user-images.githubusercontent.com/14543226/28709282-f95c79ea-737f-11e7-98ef-ab8b1ba6b248.png" alt="table" width="600" height="150">
 
-* you can see the output signal after every stage in the [Appendix] for easier visualisation.
+* you can see the output signal after every stage in the Appendix below, for easier visualisation.
 
 ### Procedure
 
