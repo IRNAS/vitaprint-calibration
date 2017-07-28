@@ -22,10 +22,10 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 
 - weighing scale with a serial output to PC
 - a PC equipped with:
-  - software for RS232 terminal reading (if it came with the weighing scale, use the original software. If not, several appropriate are available online like Termite, PuTTy etc.)
-  - CNC control software
-  - Python 3 environment (Spyder or similar) to run the g-code generator
-- A glass vessel
+  - software for RS232 terminal reading. If it came with the weighing scale, use the original software. If not, several appropriate are available online like Termite, PuTTy etc. ([download Termite here](#https://www.compuphase.com/software_termite.htm))
+  - CNC machine and control
+  - Python 3 environment (Spyder or similar) to run the g-code generator ([download here](#https://www.python.org/downloads/))
+- A glass beaker
 - sunflower oil
 
 ## Data Acquisition <a id="DATA_ACQUISITION"></a>
@@ -36,16 +36,16 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 - if the software enables it, select the option for the data be written into a .txt file 
 
 <b> 2. Generate the testing protocol g-code </b>
-- Download the file from GitHub and open it in the preferred Python PE environment
+- Download the VITAPRINT_latency_test_protocol.py file from GitHub and open it in the preferred Python environment
 - read the instructions in the heading of the file to familiarise yourself with the parameters you can manipulate
 - Run the programme. Now, a file named ‘[TODAYSDATE-your_specified_filename].gcode’ should be generated in your working directory.
 - Open this file in your CNC control software and see if it is working
 
 <b> 3. Prepare the apparatus </b>
-- Fill the glass vessel with sunflower oil
+- Fill the glass beaker with sunflower oil
 - place it onto the weighing scale and press “Tare”
 - Mount your extruder over the vessel
-- mount the syringe, filled with material with needle attached onto the extruder
+- mount the syringe, filled with material with needle attached onto the extruder (G21 needle used in our case)
 - extrude some material so that it starts flowing out and wait for the outflow to stop
 
 <b> 4. Start recording the mass </b>
@@ -67,10 +67,10 @@ It is important to understand the workflow of the data processing. The raw data 
 
 ### Procedure
 
-1. Download the data_processing.py file
-2. Copy the .txt file with your acquired data into the same folder
-3. Open the data_processin.py file in your Python environment and read the head of the file.
-4. Change the file name in the code as it is suggested in the header
+1. Download the file for data processing (VITAPRINT_latency_data_processing.py)
+2. Copy the .txt file with your acquired data into the same folder as the data processing file.
+3. Open the VITAPRINT_latency_data_processing.py file in your Python environment and read the head of the file.
+4. 4. Follow the instructions in the code header
 5. Run the code
 6. the Latency values should appear in your python command prompt as the programme output
 	
