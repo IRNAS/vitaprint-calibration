@@ -29,7 +29,7 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 - sunflower oil
 
 ## Data Acquisition <a id="DATA_ACQUISITION"></a>
-1. Connect the serial output of the weighing scale to the computer USB port and get the communication working:
+<b> 1. Connect the serial output of the weighing scale to the computer USB port and get the communication working: <\b>
 - run the serial read software 
 - check the data sheet  of the weighing scale for baud rate, data bits, parity etc.)
 - make sure all the settings in the software match the values in the data sheet. If they do, the values on the computer terminal monitor should match the one you can read on the weighing scale screen
@@ -58,8 +58,8 @@ Figure 2: The apparatus for latency measurement
 ### How does it work?
 It is important to understand the workflow of the data processing. The raw data may contain some high frequency noise usually originating from the building vibration (people walking, door closing etc.). The raw data are therefore first low-pass filtered. Then they are blocked up in cycles (each cycles contains a dataset of mass values associated to one displacement step). Then, an exponential fit of a form f = a*exp(-bx) + c*exp(-dx) is fitted to each dataset. At the end, a 95% point is found in every dataset and taken as the system latency.
 
-<img src="https://user-images.githubusercontent.com/14543226/28709282-f95c79ea-737f-11e7-98ef-ab8b1ba6b248.png" alt="table" width="600" height="100">
-* you can see the output signal after every stage in the [Appendix](#APPENDIX) for easier visualisation.
+<img src="https://user-images.githubusercontent.com/14543226/28709282-f95c79ea-737f-11e7-98ef-ab8b1ba6b248.png" alt="table" width="600" height="150">
+* you can see the output signal after every stage in the Appendix for easier visualisation.
 
 ### Procedure
 
