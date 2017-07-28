@@ -22,9 +22,9 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 
 - weighing scale with a serial output to PC
 - a PC equipped with:
-  - software for RS232 terminal reading. If it came with the weighing scale, use the original software. If not, several appropriate are available online like Termite, PuTTy etc. ([download Termite here](#https://www.compuphase.com/software_termite.htm))
+  - software for RS232 terminal reading. If it came with the weighing scale, use the original software. If not, several appropriate are available online like Termite, PuTTy etc. ([download Termite here](https://www.compuphase.com/software_termite.htm))
   - CNC machine and control
-  - Python 3 environment (Spyder or similar) to run the g-code generator ([download here](#https://www.python.org/downloads/))
+  - Python 3 environment (Spyder or similar) to run the g-code generator ([download here](https://www.python.org/downloads/))
 - A glass beaker
 - sunflower oil
 
