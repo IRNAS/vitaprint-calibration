@@ -14,6 +14,9 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 ## Table of Contents
 - [Equipment](#EQUIP)
 - [Data Acquisition](#DATA_ACQUISITION)
+- [Data Processing](#DATA_PROCESSING)
+- [Important Notes and Tips](#NOTES)
+
 
 ## Equipment <a id="EQUIP"></a>
 
@@ -51,7 +54,7 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 <img src="https://user-images.githubusercontent.com/14543226/28709225-bcf81004-737f-11e7-87f6-de00855973e0.png" alt="table" width="600" height="400">
 Figure 2: The apparatus for latency measurement
 
-## Data Processing
+## Data Processing <a id="DATA_PROCESSING"></a>
 ### How does it work?
 It is important to understand the workflow of the data processing. The raw data may contain some high frequency noise usually originating from the building vibration (people walking, door closing etc.). The raw data are therefore first low-pass filtered. Then they are blocked up in cycles (each cycles contains a dataset of mass values associated to one displacement step). Then, an exponential fit of a form f = a*exp(-bx) + c*exp(-dx) is fitted to each dataset. At the end, a 95% point is found in every dataset and taken as the system latency.
 
@@ -67,11 +70,11 @@ It is important to understand the workflow of the data processing. The raw data 
 5. Run the code
 6. the Latency values should appear in your python command prompt as the programme output
 	
-## Important Notes and Tips
+## Important Notes and Tips <a id="NOTES"></a>
 
 In our setup this method proved to be repeatable and robust. However, depending on the hardware it may not be so. It is advisable to repeat this procedure several times to investigate whether you can rely on it.
 
-## APENDIX
+## APENDIX <a id="APPENDIX"></a>
 ### Visualisation of the signal outputs
 <img src="https://user-images.githubusercontent.com/14543226/28709489-ced8ae0e-7380-11e7-803d-e01f97767026.png" alt="table" width="400" height="300">
 Figure 1: raw data
