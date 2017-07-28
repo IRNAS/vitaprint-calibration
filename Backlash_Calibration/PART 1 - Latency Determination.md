@@ -29,27 +29,27 @@ Figure 1: showing the displacement step and the observed outflow as a function o
 - sunflower oil
 
 ## Data Acquisition <a id="DATA_ACQUISITION"></a>
-<b> 1. Connect the serial output of the weighing scale to the computer USB port and get the communication working: </b>
+<b> 1. Connect the serial output of the weighing scale to the computer USB port and get the communication working </b>
 - run the serial read software 
 - check the data sheet  of the weighing scale for baud rate, data bits, parity etc.)
 - make sure all the settings in the software match the values in the data sheet. If they do, the values on the computer terminal monitor should match the one you can read on the weighing scale screen
 - if the software enables it, select the option for the data be written into a .txt file 
 
-2. Generate the testing protocol g-code:
+<b> 2. Generate the testing protocol g-code </b>
 - Download the file from GitHub and open it in the preferred Python PE environment
 - read the instructions in the heading of the file to familiarise yourself with the parameters you can manipulate
 - Run the programme. Now, a file named ‘[TODAYSDATE-your_specified_filename].gcode’ should be generated in your working directory.
 - Open this file in your CNC control software and see if it is working
 
-3. Prepare the apparatus
+<b> 3. Prepare the apparatus </b>
 - Fill the glass vessel with sunflower oil
 - place it onto the weighing scale and press “Tare”
 - Mount your extruder over the vessel
 - mount the syringe, filled with material with needle attached onto the extruder
 - extrude some material so that it starts flowing out and wait for the outflow to stop
 
-4. Start recording the mass
-5. Run the g-code in your CNC controller
+<b> 4. Start recording the mass </b>
+<b> 5. Run the g-code in your CNC controller </b>
 
 <img src="https://user-images.githubusercontent.com/14543226/28709225-bcf81004-737f-11e7-87f6-de00855973e0.png" alt="table" width="600" height="400">
 Figure 2: The apparatus for latency measurement
@@ -60,7 +60,7 @@ It is important to understand the workflow of the data processing. The raw data 
 
 <img src="https://user-images.githubusercontent.com/14543226/28709282-f95c79ea-737f-11e7-98ef-ab8b1ba6b248.png" alt="table" width="600" height="150">
 
-* you can see the output signal after every stage in the Appendix for easier visualisation.
+* you can see the output signal after every stage in the [Appendix] for easier visualisation.
 
 ### Procedure
 
