@@ -88,9 +88,8 @@ A syringe containing the desired material with added coloring is mounted on the 
            -------      --------      --------      -------- </pre>
 -	Calculate layer height (h = "z" shift), which is roughly approximated as follows: From evaluation in "step 2", measure line width (d), line length (l) equals 50mm, and the extrusion volume (V) is determined as: 
 
-![eq2](http://latex.codecogs.com/gif.latex?V%20%3D%20E%5Cpi%20r%5E%7B2%7D)
-
-(r = inner syringe radius = 6mm). This concludes h = 2.26E/d.
+![eq2](http://latex.codecogs.com/gif.latex?V%20%3D%20E%5Cpi%20r%5E%7B2%7D) 
+Where r<sub>s</sub> equals the inner syringe radius (= 6mm). This concludes h = 2.26E/d.
 -	Move to layerS 2-4 and repeat (runs automatically)
 
 #### Step 4 - Fine adjustment of h (the solidification process can alter the basic layer height)
