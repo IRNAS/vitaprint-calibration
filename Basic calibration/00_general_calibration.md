@@ -50,7 +50,7 @@ A syringe containing the desired material with added coloring is mounted on the 
 - RUN "03_cal_tdry.gcode"
 - EVALUATE created mesh to evaluate line drying time. The line is well dry when the needle doesn't make a smear while crossing it. Use table to calculate polymerization time. A time unit is calculated from:
 
-t=path_distance/Fx60 
+![eq1](http://latex.codecogs.com/gif.latex?t%20%3D%20%5Cfrac%7Bl_%7Bpath%7D%7D%7BF%20%5Ccdot%2060%7D)
 
 [1min (60s) for 1mm of covered way]. The double line represents the extrusion step (phase 1), the single line represents the scratching step (phase 2). The numbers show the distance in mm from extrusion to scratch.
 
@@ -88,7 +88,7 @@ t=path_distance/Fx60
            -------      --------      --------      -------- </pre>
 -	Calculate layer height (h = "z" shift), which is roughly approximated as follows: From evaluation in "step 2", measure line width (d), line length (l) equals 50mm, and the extrusion volume (V) is determined as: 
 
-V=E*pi*r² 
+![eq2](http://latex.codecogs.com/gif.latex?V%20%3D%20E%5Cpi%20r%5E%7B2%7D)
 
 (r = inner syringe radius = 6mm). This concludes h = 2.26E/d.
 -	Move to layerS 2-4 and repeat (runs automatically)
