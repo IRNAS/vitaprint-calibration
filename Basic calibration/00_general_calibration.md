@@ -33,17 +33,54 @@ Certain simplifications in the calculation cause small, yet significant discrepa
 ### Procedure
 A syringe containing the desired material with added coloring is mounted on the extruder.
 
-#### Step 1
-This is used for a rough calibration of material extrusion, where E determines the position change of the piston in mm.
+#### Step 1 - Rough calibration of material extrusion, where E determines the position change of the piston in mm.
 -	RUN "01_calE1.gcode"
--	EVALUATE created sample (Is it a full line? Is the line thickness even across the length?...)
-*optional - use stereomicroscope/magnifying glass*
+-	EVALUATE created sample (Is it a full line? Is the line thickness even across the length? *optional - use stereomicroscope/magnifying glass*)
 -	MODIFY "01_calE1.gcode" and repeat
 -	CHOOSE the best value for E and 4 values for F and modify "02_calE-F.gcode"
-#### Step 2
 
+#### Step 2 - Fine calibration F for optimum E+F properties
+- RUN "02_calE-F.gcode"
+-	REPEAT "STEP 2", choose optimum value for F
+-	Choose best values for E + F and modify "03_cal_tdry.gcode"
 
-#### Step 3
+#### Step 3 - Determining material polymerization time and rough layer height.
+- RUN "03_cal_tdry.gcode"
+- Evaluate created mesh to evaluate line drying time. The line is well dry when the needle doesn't make a smear while crossing it. Use table to calculate polymerization time. A time unit is calculated from t=path_distance/Fx60 [seconds for 1mm of covered way]. The double line represents the extrusion step (phase 1), the single line represents the scratching step (phase 2). The numbers show the distance in mm from extrusion to scratch.
 
+          --------      --------      --------      --------
+          |      |      |      |      |      |      |      |
+    ||== 230 == 220 == 210 == 200 == 190 == 180 == 170 == 160 ==||
+    ||    |      |      |      |      |      |      |      |    ||
+-- 240 ----      --------      --------      --------      ---- 150 --
+|   ||                                                          ||   |
+|   ||                                                          ||   |
+-- 250 ----                                                ---- 140 --
+    ||    |                                                |    ||
+    ||    |                                                |    ||   
+-- 260 ----                                                ---- 130 --
+|   ||                                                          ||   |
+|   ||                                                          ||   |
+-- 270 ----                                                ---- 120 --
+    ||    |                                                |    ||
+    ||    |                                                |    ||
+-- 280 ----                                                ---- 110 --
+|   ||                                                          ||   |
+|   ||                                                          ||   |
+-- 290 ----                                                ---- 100 --
+    ||    |                                                |    ||
+    ||    |                                                |    ||
+-- 300 ----                                                ---- 90 --
+|   ||                                                          ||   |
+|   ||                                                          ||   |
+-- 310 ---/      --------      --------      --------      ---- 80 --
+    ||   /       |      |      |      |      |      |      |    ||
+    ||  /        |      |      |      |      |      |      |    ||
+  |_00_|   ===== 10 === 20 === 30 === 40 === 50 === 60 === 70 ==||
+           |     |      |      |      |      |      |      |
+           |     |      |      |      |      |      |      |
+           -------      --------      --------      --------
+-	Calculate layer height (h = "z" shift), which is roughly approximated as follows: From evaluation in "step 2", measure line width (d), line length (l) equals 50mm, and the extrusion volume (V) is determined as: V=E*pi*r² (r = inner syringe radius = 6mm). This concludes h = 2.26E/d.
+-	Move to layerS 2-4 and repeat (runs automatically)
 
 #### Step 4
