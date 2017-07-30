@@ -48,7 +48,11 @@ A syringe containing the desired material with added coloring is mounted on the 
 
 #### Step 3 - Determining material polymerization time and rough layer height.
 - RUN "03_cal_tdry.gcode"
-- EVALUATE created mesh to evaluate line drying time. The line is well dry when the needle doesn't make a smear while crossing it. Use table to calculate polymerization time. A time unit is calculated from t=path_distance/Fx60 [seconds for 1mm of covered way]. The double line represents the extrusion step (phase 1), the single line represents the scratching step (phase 2). The numbers show the distance in mm from extrusion to scratch.
+- EVALUATE created mesh to evaluate line drying time. The line is well dry when the needle doesn't make a smear while crossing it. Use table to calculate polymerization time. A time unit is calculated from:
+
+t=path_distance/Fx60 
+
+[1min (60s) for 1mm of covered way]. The double line represents the extrusion step (phase 1), the single line represents the scratching step (phase 2). The numbers show the distance in mm from extrusion to scratch.
 
 <pre>          --------      --------      --------      --------
           |      |      |      |      |      |      |      |
@@ -82,7 +86,11 @@ A syringe containing the desired material with added coloring is mounted on the 
            |     |      |      |      |      |      |      |
            |     |      |      |      |      |      |      |
            -------      --------      --------      -------- </pre>
--	Calculate layer height (h = "z" shift), which is roughly approximated as follows: From evaluation in "step 2", measure line width (d), line length (l) equals 50mm, and the extrusion volume (V) is determined as: V=E*pi*r² (r = inner syringe radius = 6mm). This concludes h = 2.26E/d.
+-	Calculate layer height (h = "z" shift), which is roughly approximated as follows: From evaluation in "step 2", measure line width (d), line length (l) equals 50mm, and the extrusion volume (V) is determined as: 
+
+V=E*pi*r² 
+
+(r = inner syringe radius = 6mm). This concludes h = 2.26E/d.
 -	Move to layerS 2-4 and repeat (runs automatically)
 
 #### Step 4 - Fine adjustment of h (the solidification process can alter the basic layer height)
