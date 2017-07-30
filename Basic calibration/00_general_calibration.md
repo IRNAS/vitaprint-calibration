@@ -6,7 +6,7 @@ Being tansferrable, the Vitaprint extruder is capable of printing structures, sl
 ## Table of Contents
 - [Basic extrusion calculation](#CALC)
 - [Extrusion adjustment by drawing](#DRAWING)
-- [Important Notes and Tips](#NOTES)
+-- [Introduction](#intro)
 
 ## Basic extrusion calculation
 The first approximation of extrusion settings can be calculated theoretically, based on some simple assumptions. Due to its mechanical, piston driven nature, extrusion can be precisely controlled by motorized displacement of the piston (rotation vs thread, both of which is specified) and depends on the difference between the inner diameters of the syringe r<sub>s</sub> and the nozzle r<sub>n</sub>. If we assume non-elastic behavior and laminar flow, the displaced volume in the syringe should equal the extruded volume through the nozzle. If the printed stroke takes the cross-sectional shape of the nozzle, the length of the printed path can be calculated as follows:
