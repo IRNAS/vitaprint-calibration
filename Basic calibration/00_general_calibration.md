@@ -34,19 +34,19 @@ Certain simplifications in the calculation cause small, yet significant discrepa
 A syringe containing the desired material with added coloring is mounted on the extruder.
 
 #### Step 1 - Rough calibration of material extrusion, where E determines the position change of the piston in mm.
--	RUN "01_calE1.gcode"
--	EVALUATE created sample (Is it a full line? Is the line thickness even across the length? *optional - use stereomicroscope/magnifying glass*)
--	MODIFY "01_calE1.gcode" and repeat
--	CHOOSE the best value for E and 4 values for F and modify "02_calE-F.gcode"
+- RUN "01_calE1.gcode"
+- EVALUATE created sample (Is it a full line? Is the line thickness even across the length? *optional - use stereomicroscope/magnifying glass*)
+- MODIFY "01_calE1.gcode" and repeat
+- CHOOSE the best value for E and 4 values for F and modify "02_calE-F.gcode"
 
 #### Step 2 - Fine calibration F for optimum E+F properties
 - RUN "02_calE-F.gcode"
--	REPEAT "STEP 2", choose optimum value for F
--	Choose best values for E + F and modify "03_cal_tdry.gcode"
+- REPEAT "STEP 2", choose optimum value for F
+- Choose best values for E + F and modify "03_cal_tdry.gcode"
 
 #### Step 3 - Determining material polymerization time and rough layer height.
 - RUN "03_cal_tdry.gcode"
-- Evaluate created mesh to evaluate line drying time. The line is well dry when the needle doesn't make a smear while crossing it. Use table to calculate polymerization time. A time unit is calculated from t=path_distance/Fx60 [seconds for 1mm of covered way]. The double line represents the extrusion step (phase 1), the single line represents the scratching step (phase 2). The numbers show the distance in mm from extrusion to scratch.
+- EVALUATE created mesh to evaluate line drying time. The line is well dry when the needle doesn't make a smear while crossing it. Use table to calculate polymerization time. A time unit is calculated from t=path_distance/Fx60 [seconds for 1mm of covered way]. The double line represents the extrusion step (phase 1), the single line represents the scratching step (phase 2). The numbers show the distance in mm from extrusion to scratch.
 
           --------      --------      --------      --------
           |      |      |      |      |      |      |      |
@@ -83,4 +83,6 @@ A syringe containing the desired material with added coloring is mounted on the 
 -	Calculate layer height (h = "z" shift), which is roughly approximated as follows: From evaluation in "step 2", measure line width (d), line length (l) equals 50mm, and the extrusion volume (V) is determined as: V=E*pi*r² (r = inner syringe radius = 6mm). This concludes h = 2.26E/d.
 -	Move to layerS 2-4 and repeat (runs automatically)
 
-#### Step 4
+#### Step 4 - Fine adjustment of h (the solidification process can alter the basic layer height)
+- MODIFY "04_cal_h.gcode" using previous parameters and the calculated h from "STEP 3", and define 4 new height parameters which use old h +/- 0.005-0.01mm.
+- RUN "04_cal_h.gcode"
